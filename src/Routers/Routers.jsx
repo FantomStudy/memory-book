@@ -4,6 +4,7 @@ import HomeLayout from "../Pages/Home/HomeLayout";
 import Registration from "../Pages/Auth/Registration";
 import BookLayout from "../Pages/Book/BookLayout";
 import Login from "../Pages/Auth/Login";
+import ProfileLayout from "../Pages/Profile/ProfileLayout";
 
 // const UsersRoute = ({ children }) => {
 //   const isLoggedIn = Cookies.get("logged_in") === "true";
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
   {
     path: "/book",
     element: <BookLayout />,
+  },
+  {
+    path: "/profile",
+    element: <ProfileLayout />,
   },
   //   {
   //     path: "/catalog",
