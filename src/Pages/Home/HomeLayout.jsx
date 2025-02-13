@@ -1,13 +1,5 @@
+import React from "react";
 
-import React, { useEffect } from "react";
-
-
-export default function HomeLayaot() {
-
-    return(
-        <>
-        <h1> 12345</h1> 
-        </>
-
-    )
+export default function HomeLayout() {
+  return <div>HomeLayout</div>;
 }
