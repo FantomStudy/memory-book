@@ -48,7 +48,7 @@ import Login from "../Pages/Auth/Login";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Registration />,
+    element: <HomeLayout />,
   },
   {
     path: "/registration",
