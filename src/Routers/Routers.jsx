@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"; // Импортируйте React
 import { createBrowserRouter } from "react-router-dom"; // Убедитесь, что импортируете правильно
-// import HomeLayout from './Pages/Home/HomeLayout.jsx'
 import HomeLayout from "../Pages/Home/HomeLayout";
 import Registration from "../Pages/Auth/Registration/Registration";
 
