@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"; // Импортируйте 
 import { createBrowserRouter } from "react-router-dom"; // Убедитесь, что импортируете правильно
 // import HomeLayout from './Pages/Home/HomeLayout.jsx'
 import HomeLayout from "../Pages/Home/HomeLayout";
+import Registration from "../Pages/Auth/Registration/Registration";
 
 // const UsersRoute = ({ children }) => {
 //   const isLoggedIn = Cookies.get("logged_in") === "true";
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+  },
+  {
+    path: "/registration",
+    element: <Registration />,
   },
   //   {
   //     path: "/catalog",
