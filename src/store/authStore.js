@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
-import { url } from "../constants/constants";
+import { url } from "../global/constants/constants";
 
 const useAuthStore = create((set, get) => ({
   login: "",

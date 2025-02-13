@@ -33,15 +33,23 @@ export default function Registration() {
         <input
           className={styles.reg_input}
           type="text"
-          placeholder="login"
+          placeholder="ФИО"
           onChange={(e) => {
             setLogin(e.target.value);
           }}
         />
         <input
           className={styles.reg_input}
+          type="text"
+          placeholder="Номер"
+          //   onChange={(e) => {
+          //     setLogin(e.target.value);
+          //   }}
+        />
+        <input
+          className={styles.reg_input}
           type="email"
-          placeholder="email"
+          placeholder="Почта"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -49,7 +57,7 @@ export default function Registration() {
         <input
           className={styles.reg_input}
           type="password"
-          placeholder="password"
+          placeholder="Пароль"
           onChange={(e) => {
             setPassword(e.target.value);
           }}
@@ -58,7 +66,7 @@ export default function Registration() {
         <input
           className={styles.reg_input}
           type="password"
-          placeholder="repassword"
+          placeholder="Подтверждение пароля"
           onChange={(e) => {
             setRepassword(e.target.value);
           }}

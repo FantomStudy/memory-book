@@ -1,2 +1,17 @@
 .reg_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  width: 650px;
+}
+.reg_input {
+  width: 650px;
+  height: 52px;
+
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #858585;
 }
