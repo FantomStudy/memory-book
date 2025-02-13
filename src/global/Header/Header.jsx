@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import { Container } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Container, Link } from "@mui/material";
 
 export default function Header() {
   return (
