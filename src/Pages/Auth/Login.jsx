@@ -1,8 +1,10 @@
 import React from "react";
-import useAuthStore from "../../../store/authStore";
-import styles from "./Registration.module.css";
+import useAuthStore from "../../store/authStore";
+import styles from "./Auth.module.css";
 import { Container } from "@mui/material";
-export default function Registration() {
+import { Link } from "react-router-dom";
+import ActivePeople from "../../../public/icons/logoActivePeople.svg";
+export default function Login() {
   const {
     login,
     setLogin,
@@ -28,16 +30,9 @@ export default function Registration() {
         alignItems: "center",
       }}
     >
-      <h1>Зарегистрироваться</h1>
       <form onSubmit={handleSubmit} className={styles.reg_form}>
-        <input
-          className={styles.reg_input}
-          type="text"
-          placeholder="ФИО"
-          onChange={(e) => {
-            setLogin(e.target.value);
-          }}
-        />
+        <h1>Войти</h1>
+
         <input
           className={styles.reg_input}
           type="text"
@@ -63,19 +58,22 @@ export default function Registration() {
           }}
         />
 
-        <input
-          className={styles.reg_input}
-          type="password"
-          placeholder="Подтверждение пароля"
-          onChange={(e) => {
-            setRepassword(e.target.value);
-          }}
-        />
-
         <button type="submit" className={styles.submit_button}>
-          submit
+          Войти
         </button>
       </form>
+      <p className={styles.reg_description}>
+        Еще нет аккаунта? <Link to="/registration">Зарегистрироваться</Link>
+      </p>
+      <b className={styles.chose}>Или</b>
+
+      <div className={styles.active_people}>
+        <img src={ActivePeople} alt="ActivePeople" />
+        <div className={styles.text_container}>
+          <h3>Активный гражданин</h3>
+          <h3 className={styles.thin}>Оренбургской области</h3>
+        </div>
+      </div>
     </Container>
   );
 }
