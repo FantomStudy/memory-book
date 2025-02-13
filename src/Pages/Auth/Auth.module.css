@@ -23,6 +23,7 @@
   padding-left: 5px;
 }
 .submit_button {
+  cursor: pointer;
   margin-top: 30px;
   width: 320px;
   height: 60px;
