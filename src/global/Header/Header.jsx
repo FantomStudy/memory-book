@@ -60,7 +60,7 @@ export default function Header() {
             О проекте
           </MotionLink>
           <MotionLink
-            href="/"
+            href="/book"
             sx={headerLinkStyle}
             variants={headerAnimation}
             custom={2}
