@@ -5,9 +5,11 @@ import {
   CardContent,
   CardMedia,
   Grid2,
+  IconButton,
   Typography,
 } from "@mui/material";
 import React from "react";
+import bin from "../../../../public/icons/bin.svg";
 
 export default function ProfileCard() {
   return (
@@ -78,18 +80,36 @@ export default function ProfileCard() {
                       При форсировании Днепра отделение под командованием
                       сержанта Абдршина первым заняло оборону...
                     </Typography>
-                    <Button
+                    <Box
                       sx={{
-                        width: "50%",
-                        borderRadius: "0px",
-                        backgroundColor: "#E01D04",
-                        mt: 2,
-                        fontSize: "14px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
                       }}
-                      variant="contained"
                     >
-                      Подробнее
-                    </Button>
+                      <Button
+                        sx={{
+                          width: "30%",
+                          borderRadius: "0px",
+                          backgroundColor: "#E01D04",
+                          mt: 2,
+                          fontSize: "12px",
+                        }}
+                        variant="contained"
+                      >
+                        Редактировать
+                      </Button>
+                      <Button
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "#E01D04",
+                          borderRadius: "0px",
+                          mt: 2,
+                        }}
+                      >
+                        <img src={bin} alt="bin" />
+                      </Button>
+                    </Box>
                   </Box>
                 </Box>
               </CardContent>

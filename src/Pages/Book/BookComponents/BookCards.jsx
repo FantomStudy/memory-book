@@ -68,7 +68,7 @@ export default function BookCards() {
                     loading="lazy"
                   />
                 </Box>
-                <Box sx={{ width: "75%" }}>
+                <Box sx={{ width: { xs: "100%", md: "75%" } }}>
                   <Box
                     sx={{
                       display: "flex",
@@ -83,6 +83,7 @@ export default function BookCards() {
                         fontWeight: "bold",
                         mb: 1,
                         width: { xs: "100%", md: "60%" },
+                        lineHeight: "1.2",
                       }}
                       //   onClick={() => {
                       //     window.location.href = `/product/${e.id}`;

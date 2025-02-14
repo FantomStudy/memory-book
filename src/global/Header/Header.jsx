@@ -58,10 +58,6 @@ export default function Header() {
             custom={1}
           >
             О проекте
-<<<<<<< HEAD
-          </Link>
-          <Link href="/book" sx={headerLinkStyle}>
-=======
           </MotionLink>
           <MotionLink
             href="/"
@@ -69,7 +65,6 @@ export default function Header() {
             variants={headerAnimation}
             custom={2}
           >
->>>>>>> 7d4ffd37890e7058f949dc275b75dab9d59f08d0
             Книга памяти
           </MotionLink>
           <MotionLink
