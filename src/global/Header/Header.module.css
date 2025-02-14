@@ -2,16 +2,13 @@
   background-color: #1c1c1c;
   opacity: 90%;
   padding: 13px 0;
+  overflow: hidden;
 }
 .header_nav {
   display: flex;
   justify-content: end;
   align-items: center;
   grid-gap: 35px;
-}
-.header_account__link {
-  width: 40px;
-  aspect-ratio: 1;
 }
 .search_form {
   display: flex;
@@ -38,11 +35,31 @@
 .search_form__input:focus {
   outline: none;
 }
+.burger_btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  padding: 0;
+  border: none;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.burger_btn span {
+  content: "";
+  height: 3px;
+  width: 35px;
+  background-color: black;
+  position: absolute;
+}
 @media (max-width: 600px) {
 }
 
 @media (max-width: 900px) {
+  .header_nav {
+    display: none;
+  }
 }
 
 @media (max-width: 1200px) {
