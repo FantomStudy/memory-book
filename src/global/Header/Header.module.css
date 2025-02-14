@@ -35,35 +35,16 @@
 .search_form__input:focus {
   outline: none;
 }
-.burger_btn {
-  width: 40px;
-  height: 40px;
-  position: relative;
-  padding: 0;
-  border: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.burger_menu {
+  width: 60%;
 }
-.burger_btn span {
-  content: "";
-  height: 3px;
-  width: 35px;
-  background-color: black;
-  position: absolute;
-}
-@media (max-width: 600px) {
-}
-
 @media (max-width: 900px) {
-  .header_nav {
-    display: none;
-  }
+  /* .header_nav {
+    grid-gap: 25px;
+  } */
 }
-
 @media (max-width: 1200px) {
   .header_nav {
-    grid-gap: 25px;
+    grid-gap: 20px;
   }
 }

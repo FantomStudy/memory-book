@@ -1,0 +1,13 @@
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1280px;
+  box-sizing: border-box;
+}
+.button.button__default {
+  padding: 20px 60px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #e01d04;
+  border: none;
+}

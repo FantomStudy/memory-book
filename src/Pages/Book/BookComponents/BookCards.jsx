@@ -50,13 +50,13 @@ export default function BookCards() {
                 }}
               >
                 <Box
+                  // onClick={() => {Box
                   sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     width: { xs: "100%", md: "25%" },
                   }}
-                  // onClick={() => {
                   //   window.location.href = `/product/${e.id}`;
                   // }}
                 >

@@ -1,39 +1,31 @@
 import React, { useState } from "react";
 import styles from "./Header.module.css";
-import { Container, duration, Link } from "@mui/material";
-import { motion } from "motion/react";
+import BurgerButton from "./HeaderComponents/BurgerButton";
+import {
+  Container,
+  Link,
+  Hidden,
+  useMediaQuery,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
+import { color, motion } from "motion/react";
+import {
+  links,
+  headerLinkStyle,
+  renderElementAnimation,
+} from "./constants/constants";
 
-const headerLinkStyle = {
-  color: "#ccc",
-  textDecoration: "none",
-  transition: ".2s color ease-in-out",
-  "&:hover": { color: "white" },
-};
-
-const headerAnimation = {
-  hidden: {
-    opacity: 0,
-    y: 10,
-  },
-  visible: (d) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.3, delay: d * 0.15, type: "spring" },
-  }),
-};
-// const burgerMenuAnimation = {
-//   hidden: {
-//     x: "0",
-//   },
-//   visible: {
-//     x: "-100%",
-//   },
-// };
-
-const MotionLink = motion.create(Link);
+const MLink = motion.create(Link);
 
 export default function Header() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isTable = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
     <motion.header
@@ -47,78 +39,96 @@ export default function Header() {
           display: "flex",
           justifyContent: "end",
           alignItems: "center",
-          gridGap: { xs: "15px", sm: "35px", md: "25px", lg: "40px" },
+          gridGap: { xs: "15px", sm: "35px", md: "20px", lg: "40px" },
         }}
       >
-        <nav className={styles.header_nav}>
-          <MotionLink
-            href="/"
-            sx={headerLinkStyle}
-            variants={headerAnimation}
-            custom={1}
+        <Hidden smDown>
+          <Hidden mdDown>
+            <nav className={styles.header_nav}>
+              {links.map((link, index) => (
+                <MLink
+                  key={link.label}
+                  href={link.href}
+                  sx={headerLinkStyle}
+                  variants={renderElementAnimation}
+                  custom={index + 1}
+                >
+                  {link.label}
+                </MLink>
+              ))}
+            </nav>
+          </Hidden>
+          <motion.form
+            onSubmit={() => {}}
+            className={styles.search_form}
+            variants={renderElementAnimation}
+            custom={isTable ? 1 : 5}
           >
-            О проекте
-          </MotionLink>
-          <MotionLink
+            <button
+              type="submit"
+              className={styles.search_form__button}
+            ></button>
+            <input
+              type="text"
+              className={styles.search_form__input}
+              placeholder="Поиск"
+            />
+          </motion.form>
+
+          <MLink
             href="/"
-            sx={headerLinkStyle}
-            variants={headerAnimation}
-            custom={2}
-          >
-            Книга памяти
-          </MotionLink>
-          <MotionLink
-            href="/"
-            sx={headerLinkStyle}
-            variants={headerAnimation}
-            custom={3}
-          >
-            Интерактивная карта
-          </MotionLink>
-          <MotionLink
-            href="/"
-            sx={headerLinkStyle}
-            variants={headerAnimation}
-            custom={4}
-          >
-            Контакты
-          </MotionLink>
-        </nav>
-        <motion.form
-          onSubmit={() => {}}
-          className={styles.search_form}
-          variants={headerAnimation}
-          custom={5}
-        >
-          <button type="submit" className={styles.search_form__button}></button>
-          <input
-            type="text"
-            className={styles.search_form__input}
-            placeholder="Поиск"
-          />
-        </motion.form>
-        <MotionLink
-          href="/"
-          variants={headerAnimation}
-          custom={6}
-          sx={{
-            width: "40px",
-            height: "40px",
-            backgroundImage: "url(/icons/userIcon.svg)",
+            variants={renderElementAnimation}
+            custom={isTable ? 2 : 6}
+            sx={{
+              width: "40px",
+              height: "40px",
+              backgroundImage: "url(/icons/userIcon.svg)",
+            }}
+          ></MLink>
+        </Hidden>
+
+        <BurgerButton
+          isOpen={isOpen}
+          toggleMenu={toggleMenu}
+          custom={() => {
+            if (isMobile) {
+              return 1;
+            } else if (isTable) {
+              return 3;
+            } else {
+              return 7;
+            }
           }}
-        ></MotionLink>
-        <button className={styles.burger_btn}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        {/* {isMobile && (
-          <motion.button
-            
-            variants={headerAnimation}
-            custom={7}
-          ></motion.button>
-        )} */}
+        />
+
+        <Drawer
+          anchor="right"
+          open={isOpen}
+          onClose={toggleMenu}
+          sx={{ justifyContent: "center" }}
+        >
+          <motion.div
+            className={styles.burger_menu}
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -100, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <List>
+              {links.map((link, index) => (
+                <motion.div key={link.label}>
+                  <ListItem button onClick={toggleMenu}>
+                    <ListItemText>
+                      <Link href={link.href} sx={{ color: "black" }}>
+                        {link.label}
+                      </Link>
+                    </ListItemText>
+                  </ListItem>
+                </motion.div>
+              ))}
+            </List>
+          </motion.div>
+        </Drawer>
       </Container>
     </motion.header>
   );

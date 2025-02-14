@@ -22,8 +22,13 @@
   background: #555;
 }
 
-body {
+* {
   margin: 0;
+}
+body {
   font-family: Montserrat;
   background-color: #ececec;
+}
+input {
+  font-family: Montserrat;
 }
