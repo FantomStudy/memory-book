@@ -9,12 +9,13 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import LeftbarFilter from "./LeftbarFilter";
 
 export default function BookCards() {
   return (
     <Box sx={{ mt: 1, mb: 5 }}>
       <Box sx={{ mb: 5 }}>
-        {/* <SidebarFilter setFilters={setFilters} /> */}
+        <LeftbarFilter />
       </Box>
       <Box>
         <Grid2
@@ -39,13 +40,19 @@ export default function BookCards() {
                 p: 1,
               }}
             >
-              <CardContent sx={{ display: "flex", gridGap: 20 }}>
+              <CardContent
+                sx={{
+                  display: "flex",
+                  gridGap: 20,
+                  flexDirection: { xs: "column", md: "unset" },
+                }}
+              >
                 <Box
                   sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    width: "25%",
+                    width: { xs: "100%", md: "25%" },
                   }}
                   // onClick={() => {
                   //   window.location.href = `/product/${e.id}`;
@@ -64,15 +71,16 @@ export default function BookCards() {
                     sx={{
                       display: "flex",
                       justifyContent: "space-between",
+                      flexDirection: { xs: "column", md: "unset" },
                       mb: 1,
                     }}
                   >
                     <Typography
                       sx={{
-                        fontSize: "3rem",
+                        fontSize: { xs: "2rem", md: "3rem" },
                         fontWeight: "bold",
                         mb: 1,
-                        width: "60%",
+                        width: { xs: "100%", md: "60%" },
                       }}
                       //   onClick={() => {
                       //     window.location.href = `/product/${e.id}`;
@@ -81,9 +89,14 @@ export default function BookCards() {
                       Абдршин Рамиль Хайруллаевич
                     </Typography>
                     <Typography
-                      variant="h6"
+                      // variant="h6"
                       color="black"
-                      sx={{ mb: 1, width: "40%", textAlign: "right" }}
+                      sx={{
+                        mb: 1,
+                        width: { xs: "100%", md: "40%" },
+                        textAlign: { xs: "left", md: "right" },
+                        fontSize: { xs: "1rem", md: "1.25rem" },
+                      }}
                       //   onClick={() => {
                       //     window.location.href = `/product/${e.id}`;
                       //   }}
@@ -100,8 +113,11 @@ export default function BookCards() {
                     }}
                   >
                     <Typography
-                      variant="h5"
-                      sx={{ color: "#737373" }}
+                      // variant="h5"
+                      sx={{
+                        color: "#737373",
+                        fontSize: { xs: "1.2rem", md: "1.5rem" },
+                      }}
                       // onClick={() => {
                       //   window.location.href = `/product/${e.id}`;
                       // }}
@@ -115,7 +131,7 @@ export default function BookCards() {
 
                     <Button
                       sx={{
-                        width: "30%",
+                        width: { xs: "100%", md: "30%" },
                         borderRadius: "0px",
                         backgroundColor: "#E01D04",
                         mt: 4,

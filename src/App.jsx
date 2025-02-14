@@ -1,4 +1,4 @@
-import { RouterProvider } from "react-router-dom";
+import { BrowserRouter, RouterProvider } from "react-router-dom";
 import { router } from "./Routers/Routers";
 import Header from "./global/Header/Header";
 // import { ToastContainer, toast } from "react-toastify";
