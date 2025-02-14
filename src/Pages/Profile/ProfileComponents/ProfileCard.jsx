@@ -38,63 +38,78 @@ export default function ProfileCard() {
                   flexDirection: { xs: "column", md: "unset" },
                 }}
               >
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: { xs: "100%", md: "25%" },
-                  }}
-                  // onClick={() => {
-                  //   window.location.href = `/product/${e.id}`;
-                  // }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={`/image.png`}
-                    //   alt={e.name}
-                    sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    loading="lazy"
-                  />
-                </Box>
-                <Box sx={{ width: "75%" }}>
+                <Box sx={{ width: "100%" }}>
                   <Box
                     sx={{
                       display: "flex",
-                      justifyContent: "space-between",
-                      flexDirection: { xs: "column", md: "unset" },
-                      mb: 1,
+                      gridGap: 30,
+                      flexDirection: {
+                        xs: "column",
+                        md: "column",
+                        lg: "unset",
+                      },
                     }}
                   >
-                    <Typography
+                    <Box
                       sx={{
-                        fontSize: { xs: "2rem", md: "3rem" },
-                        fontWeight: "bold",
-                        mb: 1,
-                        width: { xs: "100%", md: "60%" },
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
                       }}
-                      //   onClick={() => {
-                      //     window.location.href = `/product/${e.id}`;
-                      //   }}
+                      // onClick={() => {
+                      //   window.location.href = `/product/${e.id}`;
+                      // }}
                     >
-                      Абдршин Рамиль Хайруллаевич
-                    </Typography>
-                    <Typography
-                      // variant="h6"
-                      color="black"
+                      <CardMedia
+                        component="img"
+                        image={`/image.png`}
+                        //   alt={e.name}
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                        loading="lazy"
+                      />
+                    </Box>
+                    <Box
                       sx={{
+                        display: "flex",
+                        flexDirection: "column",
                         mb: 1,
-                        width: { xs: "100%", md: "40%" },
-                        textAlign: { xs: "left", md: "right" },
-                        fontSize: { xs: "1rem", md: "1.25rem" },
                       }}
-                      //   onClick={() => {
-                      //     window.location.href = `/product/${e.id}`;
-                      //   }}
                     >
-                      Родился 01.11.1925 с. Новомусино Шарлыкского района
-                      Оренбургской области
-                    </Typography>
+                      <Typography
+                        sx={{
+                          fontSize: { xs: "1.8rem", md: "2rem" },
+                          fontWeight: "bold",
+                          mb: 1,
+                          width: { xs: "100%", md: "100%" },
+                        }}
+                        //   onClick={() => {
+                        //     window.location.href = `/product/${e.id}`;
+                        //   }}
+                      >
+                        Абдршин Рамиль Хайруллаевич
+                      </Typography>
+                      <Typography
+                        // variant="h6"
+                        color="black"
+                        sx={{
+                          mb: 1,
+                          width: { xs: "100%", md: "100%" },
+                          textAlign: { xs: "left", md: "left" },
+                          fontSize: { xs: "1rem", md: "1.2rem" },
+                        }}
+                        //   onClick={() => {
+                        //     window.location.href = `/product/${e.id}`;
+                        //   }}
+                      >
+                        Родился 01.11.1925 с. Новомусино Шарлыкского района
+                        Оренбургской области
+                      </Typography>
+                    </Box>
                   </Box>
                   <Box
                     sx={{
@@ -119,28 +134,12 @@ export default function ProfileCard() {
                       подразделениям. Во время боя командир отделения Абдршин
                       был смертельно ранен.
                     </Typography>
-<<<<<<< HEAD
-
-                    <Button
-                      sx={{
-                        width: { xs: "100%", md: "30%" },
-                        borderRadius: "0px",
-                        backgroundColor: "#E01D04",
-                        mt: 4,
-                        fontSize: "20px",
-                      }}
-                      variant="contained"
-                      //   onClick={() => {
-                      //     window.location.href = `/product/${e.id}`;
-                      //   }}
-=======
                     <Box
                       sx={{
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
                       }}
->>>>>>> c2144ed290455fad9b265a39410fc8039045c650
                     >
                       <Button
                         sx={{
@@ -148,7 +147,7 @@ export default function ProfileCard() {
                           borderRadius: "0px",
                           backgroundColor: "#E01D04",
                           mt: 2,
-                          fontSize: "12px",
+                          fontSize: { xs: "10px", md: "12px" },
                         }}
                         variant="contained"
                       >
