@@ -51,6 +51,13 @@ export default function ProfileLayout() {
           <ProfileCard />
         </div>
       </div>
+      <iframe
+        src="https://geois2.orb.ru/resource/8860"
+        width="100%"
+        height="100%"
+        style={{ border: "none" }}
+        title="Map"
+      />
     </Container>
   );
 }

@@ -6,20 +6,20 @@ import { Link } from "react-router-dom";
 import ActivePeople from "../../../public/icons/logoActivePeople.svg";
 export default function Login() {
   const {
-    login,
-    setLogin,
+    phoneNumber,
+    setphoneNumber,
     email,
     setEmail,
     password,
     setPassword,
     repassword,
     setRepassword,
-    registration,
+    Login,
   } = useAuthStore();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await registration();
+    await Login();
   };
   return (
     <Container
@@ -37,9 +37,9 @@ export default function Login() {
           className={styles.reg_input}
           type="text"
           placeholder="Номер"
-          //   onChange={(e) => {
-          //     setLogin(e.target.value);
-          //   }}
+          onChange={(e) => {
+            setphoneNumber(e.target.value);
+          }}
         />
         <input
           className={styles.reg_input}

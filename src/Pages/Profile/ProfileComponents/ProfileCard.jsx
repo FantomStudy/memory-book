@@ -13,103 +13,138 @@ import bin from "../../../../public/icons/bin.svg";
 
 export default function ProfileCard() {
   return (
-    <Box sx={{ mt: 0.5, mb: 2.5 }}>
+    <Box sx={{ mt: 1, mb: 5 }}>
+      <Box sx={{ mb: 5 }}></Box>
       <Box>
         <Grid2
           container
-          spacing={{ xs: 1, md: 1.5 }}
-          columns={{ xs: 2, sm: 2, md: 2 }}
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 4, md: 4 }}
         >
-          <Grid2 item key={1} xs={3} sm={2} md={1.5}>
+          <Grid2 item={"true"} key={1} xs={6} sm={4} md={3}>
             <Card
               sx={{
-                maxWidth: "90%",
-                background: "#fff",
+                maxWidth: "100%",
+                background: "#F5FCFF",
+                // boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+
                 borderRadius: "0px",
                 border: "none",
+                // transition: "transform 0.2s, box-shadow 0.2s",
+                // "&:hover": {
+                //   transform: "scale(1.05)",
+                //   boxShadow: " 0 8px 30px rgba(0, 0, 0, 0.2)",
+                // },
                 display: "flex",
-                p: 0.5,
+                // backdropFilter: "blur(100px)",
+                p: 1,
               }}
             >
-              <CardContent sx={{ display: "flex", gap: 10 }}>
+              <CardContent
+                sx={{
+                  display: "flex",
+                  gridGap: 20,
+                  flexDirection: { xs: "column", md: "unset" },
+                }}
+              >
                 <Box
                   sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    width: "20%",
+                    width: { xs: "100%", md: "25%" },
                   }}
+                  // onClick={() => {
+                  //   window.location.href = `/product/${e.id}`;
+                  // }}
                 >
                   <CardMedia
                     component="img"
                     image={`/image.png`}
+                    //   alt={e.name}
                     sx={{ width: "100%", height: "100%", objectFit: "cover" }}
                     loading="lazy"
                   />
                 </Box>
-                <Box sx={{ width: "80%" }}>
+                <Box sx={{ width: { xs: "100%", md: "75%" } }}>
                   <Box
                     sx={{
                       display: "flex",
                       justifyContent: "space-between",
-                      mb: 0.5,
+                      flexDirection: { xs: "column", md: "unset" },
+                      mb: 1,
                     }}
                   >
                     <Typography
                       sx={{
-                        fontSize: "1.5rem",
+                        fontSize: { xs: "2rem", md: "3rem" },
                         fontWeight: "bold",
-                        width: "60%",
+                        mb: 1,
+                        width: { xs: "100%", md: "60%" },
+                        lineHeight: "1.2",
                       }}
+                      //   onClick={() => {
+                      //     window.location.href = `/product/${e.id}`;
+                      //   }}
                     >
                       Абдршин Рамиль Хайруллаевич
                     </Typography>
                     <Typography
-                      variant="body2"
+                      // variant="h6"
                       color="black"
-                      sx={{ width: "40%", textAlign: "right" }}
+                      sx={{
+                        mb: 1,
+                        width: { xs: "100%", md: "40%" },
+                        textAlign: { xs: "left", md: "right" },
+                        fontSize: { xs: "1rem", md: "1.25rem" },
+                      }}
+                      //   onClick={() => {
+                      //     window.location.href = `/product/${e.id}`;
+                      //   }}
                     >
                       Родился 01.11.1925 с. Новомусино Шарлыкского района
                       Оренбургской области
                     </Typography>
                   </Box>
                   <Box
-                    sx={{ display: "flex", mt: 0.5, flexDirection: "column" }}
+                    sx={{
+                      display: "flex",
+                      mt: 1,
+                      flexDirection: "column",
+                    }}
                   >
-                    <Typography variant="body2" sx={{ color: "#737373" }}>
-                      При форсировании Днепра отделение под командованием
-                      сержанта Абдршина первым заняло оборону...
-                    </Typography>
-                    <Box
+                    <Typography
+                      // variant="h5"
                       sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
+                        color: "#737373",
+                        fontSize: { xs: "1.2rem", md: "1.5rem" },
                       }}
+                      // onClick={() => {
+                      //   window.location.href = `/product/${e.id}`;
+                      // }}
                     >
-                      <Button
-                        sx={{
-                          width: "30%",
-                          borderRadius: "0px",
-                          backgroundColor: "#E01D04",
-                          mt: 2,
-                          fontSize: "12px",
-                        }}
-                        variant="contained"
-                      >
-                        Редактировать
-                      </Button>
-                      <Button
-                        variant="contained"
-                        sx={{
-                          backgroundColor: "#E01D04",
-                          borderRadius: "0px",
-                          mt: 2,
-                        }}
-                      >
-                        <img src={bin} alt="bin" />
-                      </Button>
-                    </Box>
+                      При форсировании Днепра отделение под командованием
+                      сержанта Абдршина первым заняло оборону и обеспечило
+                      успешную переправу на другой берег всем остальным
+                      подразделениям. Во время боя командир отделения Абдршин
+                      был смертельно ранен.
+                    </Typography>
+
+                    <Button
+                      sx={{
+                        width: { xs: "100%", md: "30%" },
+                        borderRadius: "0px",
+                        backgroundColor: "#E01D04",
+                        mt: 4,
+                        fontSize: "20px",
+                      }}
+                      variant="contained"
+                      //   onClick={() => {
+                      //     window.location.href = `/product/${e.id}`;
+                      //   }}
+                    >
+                      Подробнее
+                    </Button>
                   </Box>
                 </Box>
               </CardContent>
