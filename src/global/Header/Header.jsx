@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
-import { Container, Link } from "@mui/material";
+import { Container, duration, Link } from "@mui/material";
+import { motion } from "motion/react";
 
 const headerLinkStyle = {
   color: "#ccc",
@@ -9,50 +10,121 @@ const headerLinkStyle = {
   "&:hover": { color: "white" },
 };
 
+const headerAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+  },
+  visible: (d) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, delay: d * 0.15, type: "spring" },
+  }),
+};
+// const burgerMenuAnimation = {
+//   hidden: {
+//     x: "0",
+//   },
+//   visible: {
+//     x: "-100%",
+//   },
+// };
+
+const MotionLink = motion.create(Link);
+
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className={styles.header}>
+    <motion.header
+      className={styles.header}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <Container
         sx={{
           display: "flex",
           justifyContent: "end",
           alignItems: "center",
-          gridGap: { xs: "10px", sm: "20px", md: "30px", lg: "40px" },
+          gridGap: { xs: "15px", sm: "35px", md: "25px", lg: "40px" },
         }}
       >
         <nav className={styles.header_nav}>
-          <Link href="/" sx={headerLinkStyle}>
+          <MotionLink
+            href="/"
+            sx={headerLinkStyle}
+            variants={headerAnimation}
+            custom={1}
+          >
             О проекте
+<<<<<<< HEAD
           </Link>
           <Link href="/book" sx={headerLinkStyle}>
+=======
+          </MotionLink>
+          <MotionLink
+            href="/"
+            sx={headerLinkStyle}
+            variants={headerAnimation}
+            custom={2}
+          >
+>>>>>>> 7d4ffd37890e7058f949dc275b75dab9d59f08d0
             Книга памяти
-          </Link>
-          <Link href="/" sx={headerLinkStyle}>
+          </MotionLink>
+          <MotionLink
+            href="/"
+            sx={headerLinkStyle}
+            variants={headerAnimation}
+            custom={3}
+          >
             Интерактивная карта
-          </Link>
-          <Link href="/" sx={headerLinkStyle}>
+          </MotionLink>
+          <MotionLink
+            href="/"
+            sx={headerLinkStyle}
+            variants={headerAnimation}
+            custom={4}
+          >
             Контакты
-          </Link>
-          <form onSubmit={() => {}} className={styles.search_form}>
-            <button
-              type="submit"
-              className={styles.search_form__button}
-            ></button>
-            <input
-              type="text"
-              className={styles.search_form__input}
-              placeholder="Поиск"
-            />
-          </form>
+          </MotionLink>
         </nav>
-        <Link href="/">
-          <img
-            src="/public/icons/userIcon.svg"
-            alt=""
-            className={styles.header_account__link}
+        <motion.form
+          onSubmit={() => {}}
+          className={styles.search_form}
+          variants={headerAnimation}
+          custom={5}
+        >
+          <button type="submit" className={styles.search_form__button}></button>
+          <input
+            type="text"
+            className={styles.search_form__input}
+            placeholder="Поиск"
           />
-        </Link>
+        </motion.form>
+        <MotionLink
+          href="/"
+          variants={headerAnimation}
+          custom={6}
+          sx={{
+            width: "40px",
+            height: "40px",
+            backgroundImage: "url(/icons/userIcon.svg)",
+          }}
+        ></MotionLink>
+        <button className={styles.burger_btn}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        {/* {isMobile && (
+          <motion.button
+            
+            variants={headerAnimation}
+            custom={7}
+          ></motion.button>
+        )} */}
       </Container>
-    </header>
+    </motion.header>
   );
 }
