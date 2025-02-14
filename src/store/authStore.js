@@ -3,23 +3,25 @@ import axios from "axios";
 import { url } from "../global/constants/constants";
 
 const useAuthStore = create((set, get) => ({
-  login: "",
+  fullName: "",
+  phoneNumber: "",
   email: "",
   password: "",
   repassword: "",
 
-  setLogin: (login) => set({ login }),
+  setfullName: (fullName) => set({ fullName }),
+  setphoneNumber: (phoneNumber) => set({ phoneNumber }),
   setEmail: (email) => set({ email }),
   setPassword: (password) => set({ password }),
   setRepassword: (repassword) => set({ repassword }),
 
   registration: async () => {
-    const { login, email, password, repassword } = get();
+    const { fullName, phoneNumber, email, password, repassword } = get();
 
     try {
       const response = await axios.post(
         `${url}/user/register`,
-        { login, email, password, repassword },
+        { fullName, phoneNumber, email, password, repassword },
         { withCredentials: true }
       );
       console.log("Успешная регистрация:", response.data);
@@ -28,12 +30,12 @@ const useAuthStore = create((set, get) => ({
     }
   },
   Login: async () => {
-    const { login, password } = get();
+    const { email, phoneNumber, password } = get();
 
     try {
       const response = await axios.post(
         `${url}/user/login`,
-        { login, password },
+        { email, phoneNumber, password },
         { withCredentials: true }
       );
       console.log("Успешная авторизация:", response.data);

@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileCard from "./ProfileComponents/ProfileCard";
 import styles from "./ProfileLayout.module.css";
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
 
 export default function ProfileLayout() {
   return (
@@ -11,19 +11,11 @@ export default function ProfileLayout() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: { xs: 2, sm: 3, md: 4 },
       }}
     >
       <h1 className={styles.title}>Профиль</h1>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: 4,
-          width: "100%",
-        }}
-      >
+      <div className={styles.wrapper}>
         <form className={styles.info_form}>
           <h2>Данные профиля</h2>
           <input
@@ -51,22 +43,21 @@ export default function ProfileLayout() {
             Редактировать
           </button>
         </form>
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            width: { xs: "100%", md: "60%" },
-          }}
-        >
+        <div className={styles.profile_cards}>
           <ProfileCard />
           <ProfileCard />
           <ProfileCard />
           <ProfileCard />
           <ProfileCard />
-        </Box>
-      </Box>
+        </div>
+      </div>
+      <iframe
+        src="https://geois2.orb.ru/resource/8860"
+        width="100%"
+        height="100%"
+        style={{ border: "none" }}
+        title="Map"
+      />
     </Container>
   );
 }

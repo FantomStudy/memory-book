@@ -7,8 +7,10 @@ import ActivePeople from "../../../public/icons/logoActivePeople.svg";
 
 export default function Registration() {
   const {
-    login,
-    setLogin,
+    fullName,
+    setfullName,
+    phoneNumber,
+    setphoneNumber,
     email,
     setEmail,
     password,
@@ -40,16 +42,16 @@ export default function Registration() {
           type="text"
           placeholder="ФИО"
           onChange={(e) => {
-            setLogin(e.target.value);
+            setfullName(e.target.value);
           }}
         />
         <input
           className={styles.reg_input}
           type="text"
           placeholder="Номер"
-          //   onChange={(e) => {
-          //     setLogin(e.target.value);
-          //   }}
+          onChange={(e) => {
+            setphoneNumber(e.target.value);
+          }}
         />
         <input
           className={styles.reg_input}
