@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileCard from "./ProfileComponents/ProfileCard";
 import styles from "./ProfileLayout.module.css";
-import { Container } from "@mui/material";
+import { Container, Box } from "@mui/material";
 
 export default function ProfileLayout() {
   return (
@@ -11,11 +11,19 @@ export default function ProfileLayout() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        padding: { xs: 2, sm: 3, md: 4 },
       }}
     >
       <h1 className={styles.title}>Профиль</h1>
 
-      <div className={styles.wrapper}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: 4,
+          width: "100%",
+        }}
+      >
         <form className={styles.info_form}>
           <h2>Данные профиля</h2>
           <input
@@ -43,14 +51,22 @@ export default function ProfileLayout() {
             Редактировать
           </button>
         </form>
-        <div className={styles.profile_cards}>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            width: { xs: "100%", md: "60%" },
+          }}
+        >
           <ProfileCard />
           <ProfileCard />
           <ProfileCard />
           <ProfileCard />
           <ProfileCard />
-        </div>
-      </div>
+        </Box>
+      </Box>
     </Container>
   );
 }
