@@ -24,7 +24,7 @@ export default function Header() {
           <Link href="/" sx={headerLinkStyle}>
             О проекте
           </Link>
-          <Link href="/" sx={headerLinkStyle}>
+          <Link href="/book" sx={headerLinkStyle}>
             Книга памяти
           </Link>
           <Link href="/" sx={headerLinkStyle}>

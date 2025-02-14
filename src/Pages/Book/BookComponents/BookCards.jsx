@@ -29,6 +29,7 @@ export default function BookCards() {
                 maxWidth: "100%",
                 background: "#F5FCFF",
                 // boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+
                 borderRadius: "0px",
                 border: "none",
                 // transition: "transform 0.2s, box-shadow 0.2s",
@@ -37,6 +38,7 @@ export default function BookCards() {
                 //   boxShadow: " 0 8px 30px rgba(0, 0, 0, 0.2)",
                 // },
                 display: "flex",
+                // backdropFilter: "blur(100px)",
                 p: 1,
               }}
             >

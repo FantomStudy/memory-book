@@ -7,7 +7,13 @@ export default function BookLayout() {
     <Container>
       <Typography
         variant="h3"
-        sx={{ display: "flex", justifyContent: "center", fontWeight: "bold" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          fontWeight: "bold",
+          color: "#000",
+          mt: "20px",
+        }}
       >
         Книга памяти
       </Typography>
