@@ -5,9 +5,11 @@ import {
   CardContent,
   CardMedia,
   Grid2,
+  IconButton,
   Typography,
 } from "@mui/material";
 import React from "react";
+import bin from "../../../../public/icons/bin.svg";
 
 export default function ProfileCard() {
   return (
@@ -117,6 +119,7 @@ export default function ProfileCard() {
                       подразделениям. Во время боя командир отделения Абдршин
                       был смертельно ранен.
                     </Typography>
+<<<<<<< HEAD
 
                     <Button
                       sx={{
@@ -130,9 +133,38 @@ export default function ProfileCard() {
                       //   onClick={() => {
                       //     window.location.href = `/product/${e.id}`;
                       //   }}
+=======
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+>>>>>>> c2144ed290455fad9b265a39410fc8039045c650
                     >
-                      Подробнее
-                    </Button>
+                      <Button
+                        sx={{
+                          width: "30%",
+                          borderRadius: "0px",
+                          backgroundColor: "#E01D04",
+                          mt: 2,
+                          fontSize: "12px",
+                        }}
+                        variant="contained"
+                      >
+                        Редактировать
+                      </Button>
+                      <Button
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "#E01D04",
+                          borderRadius: "0px",
+                          mt: 2,
+                        }}
+                      >
+                        <img src={bin} alt="bin" />
+                      </Button>
+                    </Box>
                   </Box>
                 </Box>
               </CardContent>

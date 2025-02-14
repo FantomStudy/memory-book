@@ -29,6 +29,7 @@ export default function Registration() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        p: 2,
       }}
     >
       <form onSubmit={handleSubmit} className={styles.reg_form}>
@@ -83,7 +84,7 @@ export default function Registration() {
       <p className={styles.reg_description}>
         У вас есть аккаунт? <Link to="/login">Войти</Link>
       </p>
-      <b className={styles.chose}>Или</b>
+      {/* <b className={styles.chose}>Или</b> */}
 
       <div className={styles.active_people}>
         <img src={ActivePeople} alt="ActivePeople" />
