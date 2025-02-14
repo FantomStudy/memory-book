@@ -1,7 +1,7 @@
-import { Container, Button } from "@mui/material";
 import React from "react";
 import styles from "./HomeLayout.module.css";
 import CountBox from "./HomeComponents/CountBox";
+import { figuresAndFacts } from "./constants/constants";
 
 export default function HomeLayout() {
   return (
@@ -40,34 +40,33 @@ export default function HomeLayout() {
           <div className={styles.figures__wrapper}>
             <h2 className={styles.figures__title}>Цифры и факты</h2>
             <div className={styles.count_box__wrapper}>
-              <CountBox
-                count={40}
-                underText="муниципалитета"
-                imagePath="/organization.png"
-              />
-              <CountBox
-                overText="более"
-                count={10000}
-                underText="имен сохранено"
-                imagePath="/nameSaved.png"
-              />
-              <CountBox
-                overText="более"
-                count={1000}
-                underText="документов отцифровано"
-                imagePath="/documents.png"
-              />
-              <CountBox
-                overText="более"
-                count={1500}
-                underText="наградных записей"
-                imagePath="/prize.png"
-              />
+              {figuresAndFacts.map(
+                ({ count, underText, overText, imagePath }, index) => (
+                  <CountBox
+                    key={index}
+                    count={count}
+                    underText={underText}
+                    overText={overText}
+                    imagePath={imagePath}
+                  />
+                )
+              )}
             </div>
           </div>
         </div>
       </section>
-      <section className=""></section>
+      <section className={styles.history}>
+        <div className="container">
+          <div className={styles.history__wrapper}>
+            <span className={styles.span}>
+              <h2 className={styles.history__title}>Истории героев</h2>{" "}
+              <a href="#" className="link link__default">
+                Подробнее
+              </a>
+            </span>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

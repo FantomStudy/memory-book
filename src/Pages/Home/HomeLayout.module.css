@@ -64,7 +64,8 @@
   flex-direction: column;
   grid-gap: 30px;
 }
-.figures__title {
+.figures__title,
+.history__title {
   font-size: 3rem;
 }
 .count_box__wrapper {
@@ -74,4 +75,14 @@
   padding-bottom: 80px;
   margin-bottom: 80px;
   border-bottom: 7px solid #e8e8e8;
+}
+
+/* History-section */
+.history__wrapper {
+  padding: 65px 0;
+}
+.span {
+  display: flex;
+  align-items: end;
+  grid-gap: 20px;
 }

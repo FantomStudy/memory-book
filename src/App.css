@@ -11,3 +11,7 @@
   background-color: #e01d04;
   border: none;
 }
+.link.link__default{
+  color: #e01d04;
+  font-weight: 500;
+}
